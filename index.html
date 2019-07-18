@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+	<script src="moment.min.js"></script>
+	<script src="site.js"></script>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="/Styles.css" />
+</head>
+<body>
+	  <div id="outerDiv">
+	  	<br />
+		<div id="commentArea">
+			<div id="wrapperDiv">
+				<div id="settings" style="display:none;">
+					<h4 id="settingTitle">Settings</h4>
+					<div id="radioListDiv">
+						<h5 id="classTitle">Comment Classification</h5>
+						<table>
+							<tr>
+								<td class="settingsDefault">&nbsp;</td>
+								<td><input type="radio" id="rd-default" name="addimportance" value="Default" checked="checked"><label class="settingsDefault">Default</label></td>
+								<td class="settingsImportant">&nbsp;</td>
+								<td><input type="radio" id="rd-important" name="addimportance" value="Important"><label class="settingsImportant">Important</label></td>
+								<td class="settingsCritical">&nbsp;</td>
+								<td><input type="radio" id="rd-critical" name="addimportance" value="Critical"><label class="settingsCritical">Critical</label></td>
+							</tr>
+					<tr>
+
+					</tr>
+					<tr>
+
+					</tr>
+				</table>
+			</div>
+					<br/>
+					<div id="modeDiv">
+						<input type="checkbox" name="Contextual" id="contextual-mode" /> Contextual
+					</div>
+				</div>
+				<div id="commentsListDiv">
+					<table>
+						<tbody id="comments"></tbody>
+					</table>
+				</div>
+			</div>
+			<br />
+			<div id="addcomment">
+					<div id="buttonDiv">
+					<a id="BtnSettings" onclick="showSettings()">...</a>
+				</div>
+				<div id="space"/>
+				<input type="text" id="add-comment" placeholder="Add Comment" form="addCommForm">
+			<!--<textarea rows="2" name="addc" id="commentTxtArea" form="addCommForm"></textarea>-->
+									<div id="space"></div>
+				<form action="javascript:void(0);" method="POST" id="addCommForm" onsubmit="addItem()">
+										<input type="submit" id="BtnAddComment" value="Send">
+				</form>
+			</div>
+		</div>
+	  </div>
+  </body>
+</html>

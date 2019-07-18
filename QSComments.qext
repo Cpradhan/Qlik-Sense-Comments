@@ -1,0 +1,16 @@
+{
+	"name": "QSComments",
+	"description": "QSComments is a comments extension that gives you the ability to add comments to your sheets. Its powerful features gives you the ability to add contextual comments, which assigns your comments to a set of selections and also assign a level of importance to your comments.",
+	"type": "visualization",
+	"version": "1.1.0",
+	"icon": "application",
+	"preview": "QSComments_icon.png",
+	"author": "Chirag Pradhan",
+	"homepage": "https://github.com/Cpradhan",
+	"keywords": "qlik-sense, visualization",
+	"license": "",
+	"repository": "",
+	"dependencies": {
+		"qlik-sense": ">=3.0.x"
+	}
+}

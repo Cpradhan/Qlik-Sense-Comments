@@ -1,0 +1,92 @@
+
+<div id="outerDiv">
+		<!--<div id="commentArea">-->
+			<!--<div id="wrapperDiv">-->
+				<div style="text-align: center;vertical-align:text-top;position:relative;" ng-if="error">
+                    <div><span class="lui-icon  lui-icon--warning" aria-hidden="true"></span></div>
+                    There was an error loading comments from the server.
+            	</div>
+				<div class="wrapperdiv well">
+					<div class="leftdiv"> 
+							<label style='border-bottom: 1px solid #ccc;'>Comment Category</label>
+							<div style='clear:both;'>&nbsp;</div>
+							<label class="lui-radiobutton"> 
+								<input class="lui-radiobutton__input" type="radio" name="addimportance" value="Default" checked>
+								<div class="lui-radiobutton__radio-wrap">
+									<span class="lui-radiobutton__radio"></span>
+									<span class="lui-radiobutton__radio-text">Default</span>
+								</div>
+							</label>
+							<label class="lui-radiobutton">
+								<input class="lui-radiobutton__input" type="radio" name="addimportance" value="Important">
+								<div class="lui-radiobutton__radio-wrap">
+									<span class="lui-radiobutton__radio"></span>
+									<span class="lui-radiobutton__radio-text">Important</span>
+								</div>
+							</label>
+							<label class="lui-radiobutton">
+								<input class="lui-radiobutton__input" type="radio" name="addimportance" value="Critical">
+								<div class="lui-radiobutton__radio-wrap">
+									<span class="lui-radiobutton__radio"></span>
+									<span class="lui-radiobutton__radio-text">Critical</span>
+								</div>
+							</label>
+					</div>
+					<div class="rightdiv">
+						<label style='border-bottom: 1px solid #ccc;'>Comment Type</label>
+						<div style='clear:both;'>&nbsp;</div>
+						<label class="lui-checkbox">
+							<input class="lui-checkbox__input" type="checkbox" name="chkContextual"/>
+							<div class="lui-checkbox__check-wrap">
+								<span class="lui-checkbox__check"></span>
+								<span class="lui-checkbox__check-text">Contextual</span>
+							</div>
+						</label>
+					</div>
+					
+				</div>
+				<!--<div style='clear:both;'>&nbsp;</div>-->
+					<!--
+					<div class="container">
+						<input type="radio" id="rd-default"  class="radio"  name="addimportance" value="Default" checked="checked" style="margin-left:10px;">Default
+						<input type="radio" id="rd-important" class="radio"  name="addimportance" value="Important" style="margin-left:10px;">Important
+						<input type="radio" id="rd-critical"  class="radio" name="addimportance" value="Critical" style="margin-left:10px;">Critical
+					</div>-->
+					
+					
+					<!--<input type="checkbox" name="chkContextual"> Contextual	-->
+					
+				
+				<div id="commentsListDiv">
+					 <div ng-repeat="c in comment">
+						<div id="cbox{{c.id}}" class="comment-box well">
+							<div style="padding-bottom: 5px;">
+								<b class="lui-text-success username" ng-style="{'color': '#d52b1e' }">{{c.userName}}</b> <small class="date">({{c.created}})</small>
+								<div id="context" style="float:right;">
+									<button ng-if="c.mode!=on" type="submit" class=".lui-button-context btn-xs" ng-click="applySelections(c)" aria-label="Clear">
+									  Context
+									</button>
+									<!--<button ng-if="c.mode!=on" type="button" class="lui-button-context" onclick="applySelections()">Context</button>-->
+								</div>
+							</div>
+							<div class="lui-text-default">
+								<div class="{{c.importance}}">&nbsp;</div>
+								<pre>{{c.commentText}}</pre>
+							</div>
+						</div>
+               		 </div>
+				</div>
+				<div id="addcomment">
+						<textarea maxlength="500" type="text" rows="1" class="lui-textarea textarea" ng-model="comment.text" ng-trim="false"></textarea>
+						<div style="text-align: center;">
+							<form action="javascript:void(0);" method="POST" id="addCommForm" ng-submit="updateCreateComment()">
+								<!--<input type="submit" id="BtnAddComment" value="Send">-->
+								<button type="submit" class="lui-button ng-scope ng-isolate-scope lui-button--toolbar" value="Send">Send</button>
+							</form>
+						</div>
+					</div>
+			</div>
+<!--</div>-->
+	  <!--</div>-->
+	  <!--<input type="text" id="add-comment" placeholder="Add Comment" ng-model="comment.text" form="addCommForm">-->
+			<!--<textarea rows="2" name="addc" id="commentTxtArea" form="addCommForm"></textarea> id="BtnAddComment" -->
